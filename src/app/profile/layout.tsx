@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 
-import HeaderBar from "@/components/HeaderBar";
+import Menu from "@/components/Menu";
+import HeaderBar from "@/components/HeaderBar"
 import WindowStats from "@/components/WindowStats";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,10 +23,8 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <header className="z-20">
-                    <HeaderBar></HeaderBar>
-                </header>
-                <div className="border-2 border-black">
+                <Menu />
+                <div>
                     {children}
                 </div>
                 <WindowStats />

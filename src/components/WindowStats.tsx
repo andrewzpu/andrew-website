@@ -1,11 +1,11 @@
 "use client"
 
-import useWindowResize from "@/hooks/useWindowResize";
+import useWindowSize from "@/hooks/useWindowSize";
 import useIsMobile from "@/hooks/useIsMobile";
 import useIsTablet from "@/hooks/useIsTablet";
 
 export default function WindowStats() {
-    const { width, height } = useWindowResize();
+    const { width, height } = useWindowSize();
     const isMobile = useIsMobile();
     const isTablet = useIsTablet();
 
