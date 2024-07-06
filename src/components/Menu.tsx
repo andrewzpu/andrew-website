@@ -28,7 +28,7 @@ export default function Menu() {
 
     let containerClass = `z-50 fixed top-0 left-0 w-full p-4`
 
-    let backgroundClass = `fixed bottom-0 left-0 w-screen h-screen border-black border-2 ${isOpened ? 'backdrop-blur backdrop-brightness-50 block' : 'hidden'}`
+    let backgroundClass = `fixed bottom-0 left-0 w-screen h-screen ${isOpened ? 'backdrop-blur backdrop-brightness-50 block' : 'hidden'}`
 
     return (
         <div id="container" className={containerClass}>
