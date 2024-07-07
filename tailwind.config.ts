@@ -16,7 +16,6 @@ const config: Config = {
       transitionProperty: {
         'width': 'width',
         'height': 'height',
-        'rounded': 'rounded',
       },
     },
     colors: {
@@ -30,5 +29,8 @@ const config: Config = {
     },
   },
   plugins: [],
+  variants: {
+    opacity: ['hover']
+  }
 };
 export default config;
