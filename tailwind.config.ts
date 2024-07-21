@@ -17,6 +17,9 @@ const config: Config = {
         'width': 'width',
         'height': 'height',
       },
+      fontFamily: {
+        roboto: ['var(--font-roboto)'],
+      },
     },
     colors: {
       transparent: 'transparent',
@@ -26,6 +29,7 @@ const config: Config = {
       'green': '#00ff00',
       'blue': '#0000ff',
       'black': '#000000',
+      'grey': "#5F6368",
     },
   },
   plugins: [],
