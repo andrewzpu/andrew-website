@@ -27,7 +27,6 @@ export default function RootLayout({
                 <div>
                     {children}
                 </div>
-                <WindowStats />
             </body>
         </html>
     );
