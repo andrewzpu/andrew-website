@@ -14,7 +14,7 @@ export default function Home() {
     const isTablet = useIsTablet();
 
     let pageClass = "flex justify-center"
-    let containerClass = ""
+    let containerClass = "border-2 border-black"
     let pfpClass = ""
     let rightClass = ""
     let textClass = ""
@@ -52,7 +52,7 @@ export default function Home() {
             <div className={containerClass}>
                 <div id="pfp" className={pfpClass}>
                     <Image
-                        src="/AndrewPuPFP_Square.JPG"
+                        src="/AndrewPuPFP_Square.jpg"
                         width={320}
                         height={320}
                         alt="Profile Pic"

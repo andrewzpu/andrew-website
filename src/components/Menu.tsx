@@ -64,14 +64,14 @@ export default function Menu(props: MenuProps) {
     }
 
     const inactiveClass = 'w-8 duration-100 hover:w-24 h-8 hover:cursor-pointer hover:delay-0 delay-100'
-    const activeClass = 'w-full h-24'
-    let menuClass = `group p-4 z-50 relative top-1 bg-white shadow-[0_0_5px_0px_rgba(0,0,0,0.5)] rounded-2xl transition-all duration-500 ${isOpened ? activeClass : inactiveClass}`;
+    const activeClass = 'w-full h-24 duration-500'
+    let menuClass = `group p-4 z-50 relative top-1 bg-white shadow-[0_0_5px_0px_rgba(0,0,0,0.5)] rounded-2xl transition-all ${isOpened ? activeClass : inactiveClass}`;
 
     let containerClass = `z-50 fixed top-0 left-0 w-screen p-4`
     let backgroundClass = `fixed bottom-0 left-0 w-screen h-screen ${isOpened ? 'backdrop-blur backdrop-brightness-75 block' : 'hidden'}`
 
     let buttonClass = `p-1.5 absolute top-0 left-0 h-8 flex flex-row ${isOpened ? 'opacity-0 duration-200' : 'opacity-100 duration-200 delay-300'}  transition-opacity`
-    let innerClass = `absolute top-0 left-0 w-full h-full p-4 ${isOpened ? 'opacity-100 duration-200 delay-500' : 'duration-100 opacity-0'}  transition-opacity`
+    let innerClass = `absolute top-0 left-0 w-screen h-full p-4 ${isOpened ? 'opacity-100 duration-200 delay-300' : 'duration-100 opacity-0 pointer-events-none'}  transition-opacity`
     let menuTextClass = 'relative p-0.5 left-2 leading-4 z-50 opacity-0 duration-200 group-hover:opacity-100 group-hover:delay-100 transition-opacity'
 
     let messageClass = `absolute top-6 left-16 flex flex-row gap-1 text-grey opacity-100 transition-opacity animate-side-bounce`
@@ -88,7 +88,7 @@ export default function Menu(props: MenuProps) {
                     />
                     <p className={menuTextClass}>Menu</p>
                 </div>
-                <div className={innerClass}>
+                <div id="innerClass" className={innerClass}>
                     <HeaderBar />
                 </div>
             </div>
@@ -103,7 +103,7 @@ export default function Menu(props: MenuProps) {
                             alt="Left Arrow"
                         />
                     </div>
-                    <p>Click Here</p>
+                    <p>Navigation</p>
                 </div>
             }
         </div >

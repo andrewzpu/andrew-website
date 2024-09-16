@@ -14,7 +14,7 @@ export type HomeListElementProps = {
 export default function HomeListElement(props: HomeListElementProps) {
 
     let outerClass = "relative group w-auto";
-    let boxClass = "absolute t-0 w-full bg-black w-0 h-full group-hover:w-full transition-width duration-100";
+    let boxClass = "absolute t-0 bg-black w-0 h-full group-hover:w-full transition-width duration-100";
     let textClass = "relative z-10 group-hover:text-white";
 
     if (props.className) {
