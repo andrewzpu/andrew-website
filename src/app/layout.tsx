@@ -18,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Menu />
-      <body className={inter.className}>{children}</body>
-      <WindowStats />
+      <body className={inter.className}>
+        <Menu first={true} />
+        {children}
+        <WindowStats />
+      </body>
     </html>
   );
 }

@@ -7,18 +7,9 @@ import Image from 'next/image'
 
 import "../app/globals.css";
 
-export type MenuProps = {
-    first: boolean;
-}
+export default function Menu({ first = false }) {
 
-Menu.defaultProps = {
-    first: false
-};
-
-export default function Menu(props: MenuProps) {
-
-    const firstTime = props.first
-
+    const [firstOpened, setFirstOpened] = useState(first);
     const [isOpened, setIsOpened] = useState(false);
 
     const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
@@ -43,7 +34,7 @@ export default function Menu(props: MenuProps) {
     }
 
     const handleHover = () => {
-        const tipMessage = document.getElementById("tipMessage")
+        const tipMessage = document.getElementById("navMessage")
 
         if (tipMessage != null) {
             tipMessage.style.opacity = "0"
@@ -74,14 +65,13 @@ export default function Menu(props: MenuProps) {
     let innerClass = `absolute top-0 left-0 w-screen h-full p-4 ${isOpened ? 'opacity-100 duration-200 delay-300' : 'duration-100 opacity-0 pointer-events-none'}  transition-opacity`
     let menuTextClass = 'relative p-0.5 left-2 leading-4 z-50 opacity-0 duration-200 group-hover:opacity-100 group-hover:delay-100 transition-opacity'
 
-    let messageClass = `absolute top-6 left-16 flex flex-row gap-1 text-grey opacity-100 transition-opacity animate-side-bounce`
 
     return (
         <div id="container" className={containerClass}>
             <div id="menu" className={menuClass} onClick={handleClick} onMouseOver={handleHover} onMouseOut={handleUnhover}>
                 <div className={buttonClass}>
                     <Image
-                        src="/MenuIcon.png"
+                        src="/Icons/MenuIcon.png"
                         width={20}
                         height={20}
                         alt="Menu Icon"
@@ -93,19 +83,6 @@ export default function Menu(props: MenuProps) {
                 </div>
             </div>
             <div id="background" className={backgroundClass} onClick={handleBackClick} />
-            {firstTime &&
-                <div id="tipMessage" className={messageClass}>
-                    <div className="w-5 h-5 m-0.5">
-                        <Image
-                            src="/Left.png"
-                            width={20}
-                            height={20}
-                            alt="Left Arrow"
-                        />
-                    </div>
-                    <p>Navigation</p>
-                </div>
-            }
         </div >
     )
 }

@@ -13,7 +13,7 @@ export default function Home() {
     const isTablet = useIsTablet();
 
     let pageClass = ""
-    let containerClass = "border-2 border-black"
+    let containerClass = ""
     let splitDivClass = ""
     let pfpClass = ""
     let headerClass = ""
@@ -28,11 +28,11 @@ export default function Home() {
         containerClass += " items-center justify-center flex flex-col";
     } else {
         pageClass += " h-screen w-screen"
-        containerClass += " items-center flex flex-col gap-12";
+        containerClass += " items-center flex flex-col gap-20 p-40";
         splitDivClass += " flex flex-row items-center"
-        headerClass += ` ${roboto.variable} font-roboto text-4xl font-bold text-center pt-20`
+        headerClass += ` ${roboto.variable} font-roboto text-4xl font-bold text-center pb-12`
         pfpClass += " rounded-full overflow-hidden w-80 h-80"
-        textDivClass += ` p-12 flex-1 max-w-2xl ${roboto.variable} font-roboto text-2xl font-light text-center text-wrap`
+        textDivClass += ` p-12 flex-1 max-w-2xl ${roboto.variable} font-roboto text-2xl font-light text-center text-wrap flex flex-col`
         imageClass += " rounded-[40px] overflow-hidden"
 
     }
@@ -40,7 +40,6 @@ export default function Home() {
     return (
         <main className={pageClass}>
             <div className={containerClass}>
-                <h1 className={headerClass}>About Me</h1>
                 <div className={splitDivClass}>
                     <div className={pfpClass}>
                         <Image
@@ -51,22 +50,15 @@ export default function Home() {
                         />
                     </div>
                     <div className={textDivClass}>
+                        <h1 className={headerClass}>About Me</h1>
                         <p>My name is <b>Andrew Pu</b>. I'm a Junior at <b>UCSD</b> studying <b>Computer Science</b>. I have a passion for software engineering, and I love tackling complex problems through a technological lens.</p>
                     </div>
                 </div>
-                <h1 className={headerClass}>Experiences</h1>
                 <div className={splitDivClass}>
                     <div className={textDivClass}>
-                        <p><b>Academic</b></p>
-                        <br />
+                        <h1 className={headerClass}>Experiences</h1>
                         <p>University of California, San Diego</p>
                         <p>September 2022 - June 2026</p>
-                        <p>B.S. Computer Science, Mathematics Minor</p>
-                        <p>Regents Scholar</p>
-                        <br />
-                        <p>Triton Software Engineering (TSE) - Developer</p>
-                        <p>Eta Kappa Nu (HKN) - Developer</p>
-                        <p>Triton Consulting Group (TCG) - Tech Committee</p>
                     </div>
                     <div className={imageClass}>
                         <Image
@@ -75,22 +67,6 @@ export default function Home() {
                             height={320}
                             alt="Profile Pic"
                         />
-                    </div>
-                </div>
-                <div className={splitDivClass}>
-                    <div className={imageClass}>
-                        <Image
-                            src="/Images/GeiselLibrary.jpg"
-                            width={320}
-                            height={320}
-                            alt="Profile Pic"
-                        />
-                    </div>
-                    <div className={textDivClass}>
-                        <p><b>Professional</b></p>
-                        <br />
-                        <p>University of California, San Diego</p>
-                        <p>September 2022 - June 2026</p>
                     </div>
                 </div>
             </div>

@@ -5,13 +5,25 @@ import { Roboto } from "next/font/google";
 import useIsTablet from "@/hooks/useIsTablet";
 import useIsMobile from "@/hooks/useIsMobile";
 import HomeListElement from "@/components/HomeListElement";
+import { useEffect, useState } from "react";
 
 const roboto = Roboto({ weight: ['300', '500', '700'], subsets: ["latin"], variable: '--font-roboto', style: ['normal', 'italic'] });
 
 export default function Home() {
 
-    const isMobile = useIsMobile();
-    const isTablet = useIsTablet();
+    const [isMobile, setIsMobile] = useState(false);
+    const [isTablet, setIsTablet] = useState(false);
+
+    useEffect(() => {
+        const updateMedia = () => {
+            setIsMobile(window.innerWidth < 768);
+            setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+        };
+
+        updateMedia(); // Initial check
+        window.addEventListener('resize', updateMedia);
+        return () => window.removeEventListener('resize', updateMedia);
+    }, []);
 
     let pageClass = "flex justify-center"
     let containerClass = "border-2 border-black"
@@ -20,6 +32,7 @@ export default function Home() {
     let textClass = ""
     let listClass = ""
     let listElementClass = ""
+    let navMessageClass = `absolute top-6 left-16 flex flex-row gap-1 text-grey opacity-100 transition-opacity animate-side-bounce`
 
     if (isMobile) {
         pageClass += " h-auto w-screen"
@@ -49,10 +62,21 @@ export default function Home() {
 
     return (
         <main className={pageClass}>
+            <div id="navMessage" className={navMessageClass}>
+                <div className="w-5 h-5 m-0.5">
+                    <Image
+                        src="/Icons/Left.png"
+                        width={20}
+                        height={20}
+                        alt="Left Arrow"
+                    />
+                </div>
+                <p>Navigation</p>
+            </div>
             <div className={containerClass}>
                 <div id="pfp" className={pfpClass}>
                     <Image
-                        src="/AndrewPuPFP_Square.jpg"
+                        src="/Images/AndrewPuPFP1.jpg"
                         width={320}
                         height={320}
                         alt="Profile Pic"
