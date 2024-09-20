@@ -3,9 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import HeaderBar from './HeaderBar';
 import Image from 'next/image'
-
-
+import { Roboto } from "next/font/google";
 import "../app/globals.css";
+
+const roboto = Roboto({ weight: ['300', '400', '700'], subsets: ["latin"], variable: '--font-roboto', style: ['normal', 'italic'] });
+
+
 
 export default function Menu({ first = false }) {
 
@@ -63,7 +66,7 @@ export default function Menu({ first = false }) {
 
     let buttonClass = `p-1.5 absolute top-0 left-0 h-8 flex flex-row ${isOpened ? 'opacity-0 duration-200' : 'opacity-100 duration-200 delay-300'}  transition-opacity`
     let innerClass = `absolute top-0 left-0 w-screen h-full p-4 ${isOpened ? 'opacity-100 duration-200 delay-300' : 'duration-100 opacity-0 pointer-events-none'}  transition-opacity`
-    let menuTextClass = 'relative p-0.5 left-2 leading-4 z-50 opacity-0 duration-200 group-hover:opacity-100 group-hover:delay-100 transition-opacity'
+    let menuTextClass = ` ${roboto.variable} font-roboto font-normal relative p-[2.5px] left-2 leading-4 z-50 opacity-0 duration-200 group-hover:opacity-100 group-hover:delay-100 transition-opacity`
 
 
     return (
