@@ -202,7 +202,7 @@ export default function Home() {
                 <h1 className={robotoClass + " text-4xl font-bold text-center pt-12"}>Technologies</h1>
                 <div className={robotoClass + " flex-2 text-lg font-light text-wrap flex flex-col items-center lg:items-start"}>
                     {iconsData.map((item, index) => (
-                        <div className="flex flex-col lg:flex-row items-center gap-4 p-12 m-4 w-full rounded-2xl bg-grey_2">
+                        <div key={item.title + "Section"} className="flex flex-col lg:flex-row items-center gap-4 p-12 m-4 w-full rounded-2xl bg-grey_2">
                             <p className="pb-8 lg:pb-0 px-8 w-52 flex-none text-center text-3xl lg:text-2xl"><b>{item.title}</b></p>
                             <div className="flex flex-row flex-wrap justify-center gap-4 items-center gap-y-12">
                                 {item.icons.map((icon) => (
